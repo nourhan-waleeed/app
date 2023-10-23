@@ -2,8 +2,8 @@ import pandas as pd
 from dash import Dash, html, dcc, Output, Input
 import plotly.express as px
 
-booking = pd.read_csv('bookingtest.csv')
-
+#booking = pd.read_csv('bookingtest.csv')
+booking = pd.read_csv('https://raw.githubusercontent.com/nourhan-waleeed/app/main/bookingtest.csv')
 repeated_guests = booking[booking['repeated'] == 1]
 
 app = Dash(__name__)
