@@ -1,10 +1,13 @@
 import pandas as pd
 from dash import Dash, html, dcc, Output, Input
+import plotly.express as px
+
 booking = pd.read_csv('bookingtest.csv')
 
 repeated_guests = booking[booking['repeated'] == 1]
 
 app = Dash(__name__)
+app=app.server
 
 app.layout = html.Div(style={'font-family': 'Arial, sans-serif', 'padding': '20px', 'background-color': '#F0F3F5'}, children=[
     html.H1(children='Hotel Booking & Reservation Report', style={'color': '#333', 'font-weight': 'bold'}),
